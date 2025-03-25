@@ -1,0 +1,22 @@
+<header>
+  <div class="container-fluid">
+    <a routerLink="/home">
+      <img src="icon.png" class="logo" alt="app icon" />
+    </a>
+    <nav>
+      <ul class="d-flex align-items-center">
+        <li>
+          <a routerLink="/home" routerLinkActive="active"><lucide-icon [img]="house"></lucide-icon> <span>Home</span></a>
+        </li>
+        <li>
+          <a routerLink="/cart" routerLinkActive="active" class="cart" [attr.data-count]="cartCount()"><lucide-icon [img]="shoppingCart"></lucide-icon><span>Cart</span></a>
+        </li>
+        @if(cartCount() > 0){
+          <li>
+            <a routerLink="/checkout" routerLinkActive="active"><lucide-icon [img]="creditCard"></lucide-icon><span>Checkout</span></a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

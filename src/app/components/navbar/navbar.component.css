@@ -1,0 +1,75 @@
+header{
+    background-color: #4361ee;
+}
+header .container-fluid{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 70px;
+}
+
+header .logo{
+    width: 60px;
+}
+header nav{
+    height: 100%;
+}
+header ul{
+    column-gap: 50px;
+    list-style: none;
+    height: 100%;
+}
+header ul li a{
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    transition: 0.2s;
+}
+header ul li a:hover, header ul li a.active{
+    color: #ffd500;
+}
+header ul li a.cart::after{
+    content: attr(data-count);
+    position: absolute;
+    top: -8px;
+    left: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffd500;
+    color: #001d3d;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+lucide-icon{
+    margin-right: 8px;
+}
+@media (max-width: 480px){
+    header .logo{
+        width: 50px;
+    }
+    header ul{
+        column-gap: 30px;
+    } 
+    header ul li a{
+        font-size: 15px;
+    }
+    lucide-icon{
+        margin-right: 5px;
+    }
+}
+@media (max-width: 400px){
+    header ul li a span{
+        display: none;
+    }
+}
