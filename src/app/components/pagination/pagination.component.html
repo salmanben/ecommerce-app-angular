@@ -1,0 +1,23 @@
+<nav>
+    <ul class="pagination">
+      <li>
+        <button [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
+          <lucide-icon [img]="chevronLeft"></lucide-icon>
+        </button>
+      </li>
+        <li *ngFor="let page of countPages(); let i = index">
+        <button [ngClass]="{'active': page === currentPage}" (click)="changePage(page)">
+          {{ page }}
+        </button>
+      </li>
+  
+      <li>
+        <button [disabled]="currentPage === countPages().length" (click)="changePage(currentPage + 1)">
+          <lucide-icon [img]="chevronRight"></lucide-icon>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+
+  

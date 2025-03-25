@@ -1,0 +1,20 @@
+<div class="card product-card">
+    <a [routerLink]="['/product-details', product.id]">
+      <img [src]="product.imageUrl" alt="{{ product.name}}" />
+    </a>
+    <div class="card-body">
+      <h5 class="category">{{ product.category }}</h5>
+      <h4 class="name">{{ product.name  | truncate}}</h4>
+      <p>
+        Rating: <span class="rating text-warning">{{ product.rating }}</span>
+      </p>
+      <p class="price">
+        <span class="original-price" [ngClass]="{'text-decoration-line-through text-danger': product.discountPrice != null}">{{ product.price | currency }}</span>
+        <span class="discount-price">{{ product.discountPrice | currency }}</span>
+      </p>
+      <button (click)="addToCart()" class="btn btn-warning d-block mx-auto mt-4">
+        <lucide-icon class="me-1" [img]="shoppingCart"></lucide-icon> Add to cart
+      </button>
+    </div>
+</div>
+  
